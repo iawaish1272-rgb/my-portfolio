@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import projectMainImg from "../assets/project.png";
+import aiImg from "../assets/ai.png";
+import ecomVideo from "../assets/ecomerce.mp4";
+import portfolioVideo from "../assets/portfolio.mp4";
 
 const Projects = () => {
   const colors = {
@@ -10,31 +13,34 @@ const Projects = () => {
     deepCobalt: "#1F2833",
   };
 
-  // Replace these with your actual project data later
   const projectList = [
     {
       id: 1,
       title: "E-Commerce Architecture",
       desc: "A high-performance MERN platform featuring secure JWT authentication and real-time inventory management with optimized MongoDB queries.",
       tech: ["React", "Node.js", "MongoDB", "Redux"],
+      video: ecomVideo, // Box 1: Video
     },
     {
       id: 2,
       title: "AI Integration Hub",
       desc: "An intelligent web interface leveraging external AI APIs to provide automated data insights and interactive user experiences.",
       tech: ["Express", "OpenAI API", "Tailwind", "Framer"],
+      image: aiImg, // Box 2: Image
     },
     {
       id: 3,
-      title: "Task Management Suite",
-      desc: "Full-stack productivity tool focused on CRUD operations, dynamic state handling, and seamless multi-device synchronization.",
-      tech: ["MERN", "Socket.io", "CSS3", "Git"],
+      title: "This project is under working......",
+      desc: "------------------------------------------------------",
+      tech: [],
+      image: null, // Box 3: Tech Grid pattern
     },
     {
       id: 4,
       title: "Portfolio Engine",
-      desc: "Custom-built portfolio framework designed for high speed and accessibility, featuring smooth GSAP/Framer transitions.",
+      desc: "Custom-built portfolio framework designed for high speed and accessibility, featuring smooth Framer transitions.",
       tech: ["React.js", "Vite", "Animation", "UI/UX"],
+      video: portfolioVideo, // Box 4: Video
     },
   ];
 
@@ -82,29 +88,48 @@ const Projects = () => {
               className="group relative flex flex-col rounded-3xl overflow-hidden border border-white/5"
               style={{ backgroundColor: colors.deepCobalt + "33" }}
             >
-              {/* Top Section: Image Box */}
-              <div className="relative h-64 md:h-80 border-b border-white/5 overflow-hidden flex items-center justify-center">
-                {/* Visual Placeholder for Project Image */}
-                <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-                   <div 
-                    className="w-full h-full" 
-                    style={{ 
-                      backgroundImage: `radial-gradient(${colors.electricBlue} 1px, transparent 1px)`,
-                      backgroundSize: '20px 20px' 
-                    }} 
-                   />
-                </div>
+              {/* Top Section: Media Box */}
+              <div className="relative h-64 md:h-80 border-b border-white/5 overflow-hidden flex items-center justify-center bg-black/20">
                 
-                <span className="relative z-10 text-[10px] uppercase tracking-[0.4em] font-bold opacity-30 group-hover:opacity-100 transition-all group-hover:scale-110" style={{ color: colors.electricBlue }}>
-                  "Image is here placed"
-                </span>
+                {/* 1. Video Player Logic */}
+                {project.video ? (
+                  <video 
+                    src={project.video} 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="w-full h-full object-contain relative z-10" 
+                  />
+                ) : 
+                /* 2. Image Logic */
+                project.image ? (
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-contain p-6 relative z-10" 
+                  />
+                ) : (
+                  /* 3. Empty Box Tech Pattern */
+                  <div className="absolute inset-0 opacity-20 transition-opacity duration-500">
+                     <div 
+                      className="w-full h-full" 
+                      style={{ 
+                        backgroundImage: `radial-gradient(${colors.electricBlue} 1px, transparent 1px) `,
+                        backgroundSize: '20px 20px' ,
+                      }} 
+                     />
+                  </div>
+                )}
 
-                {/* Optional: Floating project icon from your assets */}
-                <img 
-                  src={projectMainImg} 
-                  alt="deco" 
-                  className="absolute bottom-4 right-4 h-12 opacity-10 group-hover:opacity-30 transition-all group-hover:rotate-12" 
-                />
+                {/* Decorative background logo for boxes without videos */}
+                {!project.video && (
+                  <img 
+                    src={projectMainImg} 
+                    alt="deco" 
+                    className="absolute bottom-4 right-4 h-12 opacity-5 group-hover:opacity-10 transition-all" 
+                  />
+                )}
               </div>
 
               {/* Bottom Section: Detail Box */}
@@ -118,7 +143,7 @@ const Projects = () => {
                   </p>
                 </div>
 
-                {/* Techniques / Tech Stack Tags */}
+                {/* Tech Stack Tags */}
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tool) => (
                     <span 

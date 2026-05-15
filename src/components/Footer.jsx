@@ -9,6 +9,13 @@ const Footer = () => {
     deepCobalt: "#1F2833",
   };
 
+  // Define your social links here
+  const socialLinks = [
+    { name: "GitHub", url: "https://github.com/iawaish1272-rgb" },
+    { name: "LinkedIn", url: "https://linkedin.com/in/muhammad-awais-30a2b0375" },
+    { name: "Instagram", url: "https://instagram.com/iaw_aish?igsh=eHh0dG5zZmlvNzJv" },
+  ];
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -37,17 +44,19 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Social Links */}
+          {/* Updated Social Links */}
           <div className="flex gap-8">
-            {["GitHub", "LinkedIn", "Instagram"].map((platform) => (
+            {socialLinks.map((link) => (
               <motion.a
-                key={platform}
-                href="#"
+                key={link.name}
+                href={link.url}
+                target="_blank" // Opens in new tab
+                rel="noopener noreferrer" // Security best practice
                 whileHover={{ y: -3, color: colors.electricBlue }}
                 className="text-xs font-bold uppercase tracking-widest transition-colors"
                 style={{ color: colors.coolSilver + "88" }}
               >
-                {platform}
+                {link.name}
               </motion.a>
             ))}
           </div>
@@ -82,7 +91,7 @@ const Footer = () => {
             © 2026 MUHAMMAD AWAIS — ALL RIGHTS RESERVED
           </p>
           <div className="flex items-center gap-2 text-[9px] font-bold tracking-widest" style={{ color: colors.coolSilver + "44" }}>
-            DESIGNED WITH <span style={{ color: "#ff4d4d" }}>❤</span> BY <span style={{ color: colors.electricBlue }}>MUHAMMAD AWAIS</span>
+            DESIGNED BY <span style={{ color: colors.electricBlue }}>MUHAMMAD AWAIS</span>
           </div>
         </div>
       </div>

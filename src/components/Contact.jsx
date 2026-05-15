@@ -59,16 +59,18 @@ const Contact = () => {
 
             <div className="space-y-6">
               {[
-                { label: "CALL", value: "03492344361" },
-                { label: "EMAIL", value: "mymail03235@gmail.com" },
-                { label: "LOCATION", value: "University of Agriculture, Faisalabad" },
-                { label: "GITHUB", value: "github.com/MuhammadAwais", link: "https://github.com/MuhammadAwais" },
-                { label: "LINKEDIN", value: "linkedin.com/in/MuhammadAwais", link: "https://linkedin.com/in/MuhammadAwais" }
+                { label: "CALL", value: "03492344361", link: "tel:03492344361" },
+                { label: "EMAIL", value: "mymail03235@gmail.com", link: "mailto:mymail03235@gmail.com" },
+                { label: "LOCATION", value: "University of Agriculture, Faisalabad", link: "https://www.google.com/maps/search/University+of+Agriculture+Faisalabad" },
+                { label: "GITHUB", value: "github.com/MuhammadAwais", link: "https://github.com/iawaish1272-rgb"},
+                { label: "LINKEDIN", value: "linkedin.com/in/MuhammadAwais", link: "https://linkedin.com/in/muhammad-awais-30a2b0375" }
               ].map((item, i) => (
                 <div key={i} className="group cursor-pointer">
                   <p className="text-[10px] font-black tracking-[0.3em]" style={{ color: colors.electricBlue }}>{item.label}</p>
                   <a 
                     href={item.link || "#"} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
                     className="text-lg font-semibold hover:pl-2 transition-all duration-300 block" 
                     style={{ color: colors.coolSilver }}
                   >

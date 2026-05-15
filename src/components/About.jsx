@@ -16,7 +16,7 @@ const About = () => {
   };
 
   const techStack = [
-    { category: "Frontend", tools: "React.js, Tailwind CSS, HTML5/CSS3" },
+    { category: "Frontend", tools: "React.js, Tailwind CSS, HTML5/CSS3,JavaScript,C++,C#" },
     { category: "Backend", tools: "Node.js, Express.js" },
     { category: "Database", tools: "MongoDB, MySQL" },
   ];

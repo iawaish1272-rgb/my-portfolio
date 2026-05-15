@@ -13,11 +13,11 @@ const Skills = () => {
   const skillGroups = {
     technical: [
       { title: "Languages", skills: "JavaScript (ES6+), C++, C# (Basic)" },
-      { title: "Frontend", skills: "React.js, HTML5, CSS3, Tailwind CSS, Bootstrap" },
+      { title: "Frontend", skills: "React.js, HTML5, CSS3, Tailwind CSS" },
       { title: "Backend", skills: "Node.js, Express.js, RESTful APIs" },
       { title: "Database", skills: "MongoDB, MySQL (Basic SQL)" },
       { title: "Tools", skills: "Git, GitHub, VS Code, VS" },
-      { title: "Concepts", skills: "DSA, OOP, MVC, Auth, CRUD" },
+      { title: "Concepts", skills: "DSA, OOP, MVC, Auth, Data communication,Networking" },
     ],
     soft: [
       { title: "Intellect", skills: "Problem Solving, Critical Thinking" },
